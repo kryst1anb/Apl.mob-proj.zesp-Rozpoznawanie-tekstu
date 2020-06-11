@@ -9,7 +9,11 @@
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
-        android:layout_height="300dp"/>
+        android:layout_height="350dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/text_display"
@@ -28,19 +32,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_view"
         android:orientation="horizontal">
-    <Button
-        android:id="@+id/capture_image_btn"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:text="Caputre image"
-        android:textAllCaps="false"
-        android:layout_above="@+id/detect_text_image_btn"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@android:color/white"
-        android:textSize="17dp"
-        android:layout_marginBottom="10dp"/>
 
-    <Button
+        <Button
+            android:id="@+id/capture_image_btn"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-107dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Caputre image"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="17dp" />
+
+        <Button
         android:id="@+id/detect_text_image_btn"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
