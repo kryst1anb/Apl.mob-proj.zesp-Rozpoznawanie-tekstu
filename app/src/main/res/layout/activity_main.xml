@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/text_display"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionContainer"
+        android:background="@android:color/transparent"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:hint="Detected text will appear here."/>
+
+    <LinearLayout
+        android:id="@+id/actionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/capture_image_btn"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-107dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Caputre image"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="17dp" />
+
+        <Button
+        android:id="@+id/detect_text_image_btn"
+        android:layout_width="205dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Detect text"
+        android:layout_marginLeft="2px"
+        android:textAllCaps="false"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:textSize="17dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
