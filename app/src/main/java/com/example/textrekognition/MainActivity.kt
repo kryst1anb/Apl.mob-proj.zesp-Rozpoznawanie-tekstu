@@ -62,8 +62,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,PickPhotoActivity::class.java)
         ContextCompat.startActivity(this, intent, null)
     }
-    private fun aboutActivity(){
 
+    private fun aboutActivity(){
+        val intent = Intent(this,AboutScreen::class.java)
+        ContextCompat.startActivity(this, intent, null)
     }
     private fun dispatchTakePictureIntent() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
