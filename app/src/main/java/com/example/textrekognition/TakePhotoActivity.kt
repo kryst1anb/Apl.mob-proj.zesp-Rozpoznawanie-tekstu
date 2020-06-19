@@ -93,17 +93,21 @@ class TakePhotoActivity : AppCompatActivity() {
     }
 
     private fun detectTextFromImage() {
-        text_display.text = ""
-        val image = FirebaseVisionImage.fromBitmap(imageBitmap)
-        val detector = FirebaseVision.getInstance().onDeviceTextRecognizer
-        val result = detector.processImage(image)
-        result.addOnSuccessListener { firebaseVisionText ->
-            displayTextFromImage(firebaseVisionText)
+        if(this::imageBitmap.isInitialized) {
+            text_display.text = ""
+            val image = FirebaseVisionImage.fromBitmap(imageBitmap!!)
+            val detector = FirebaseVision.getInstance().onDeviceTextRecognizer
+            val result = detector.processImage(image)
+            result.addOnSuccessListener { firebaseVisionText ->
+                displayTextFromImage(firebaseVisionText)
 
-        }
-            .addOnFailureListener {
-                Toast.makeText(this, "No text to detect", Toast.LENGTH_LONG).show()
             }
+                .addOnFailureListener {
+                    Toast.makeText(this, "No text to detect", Toast.LENGTH_LONG).show()
+                }
+        } else {
+            Toast.makeText(this, "First take a photo", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun displayTextFromImage(resultText: FirebaseVisionText) {
