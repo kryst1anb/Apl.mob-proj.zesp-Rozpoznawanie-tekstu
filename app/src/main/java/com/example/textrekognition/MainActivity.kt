@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 
@@ -15,10 +16,13 @@ class MainActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
 
-            val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.myToolbar)
-            setSupportActionBar(toolbar)
+            //val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.myToolbar)
+            //setSupportActionBar(toolbar)
 
-//            supportActionBar?.title = "Another title";
+            val btnNext:Button = findViewById(R.id.button_next)
+            btnNext.setOnClickListener {
+                takePhotoActivity();
+            }
         }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
