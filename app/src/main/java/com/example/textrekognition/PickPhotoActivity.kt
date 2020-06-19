@@ -93,20 +93,15 @@ class PickPhotoActivity: AppCompatActivity() {
         detectTextFromImage();
     }
     private fun detectTextFromImage() {
-        //val firebasevisionimage:FirebaseVisionImage
         val image = FirebaseVisionImage.fromBitmap(imageBitmap)
         val detector = FirebaseVision.getInstance().onDeviceTextRecognizer
         val result = detector.processImage(image)
         result.addOnSuccessListener { firebaseVisionText ->
-            // Task completed successfully
-            // ...
 
             displayTextFromImage(firebaseVisionText)
         }
-            .addOnFailureListener { e ->
-                // Task failed with an exception
-                // ...
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG)
+            .addOnFailureListener {
+                Toast.makeText(this, "No text to detect", Toast.LENGTH_LONG).show()
             }
 
     }

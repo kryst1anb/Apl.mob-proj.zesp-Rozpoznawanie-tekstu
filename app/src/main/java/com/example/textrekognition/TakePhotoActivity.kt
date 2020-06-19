@@ -97,15 +97,11 @@ class TakePhotoActivity : AppCompatActivity() {
         val detector = FirebaseVision.getInstance().onDeviceTextRecognizer
         val result = detector.processImage(image)
         result.addOnSuccessListener { firebaseVisionText ->
-            // Task completed successfully
-            // ...
             displayTextFromImage(firebaseVisionText)
-            Toast.makeText(this, "okokokokoko", Toast.LENGTH_LONG)
+
         }
-            .addOnFailureListener { e ->
-                // Task failed with an exception
-                // ...
-                Toast.makeText(this, "smutelelelelelel", Toast.LENGTH_LONG)
+            .addOnFailureListener {
+                Toast.makeText(this, "No text to detect", Toast.LENGTH_LONG).show()
             }
     }
 
