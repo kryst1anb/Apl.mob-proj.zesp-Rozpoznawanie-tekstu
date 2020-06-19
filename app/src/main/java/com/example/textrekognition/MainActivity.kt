@@ -16,9 +16,6 @@ class MainActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
 
-            //val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.myToolbar)
-            //setSupportActionBar(toolbar)
-
             val btnNext:Button = findViewById(R.id.button_next)
             btnNext.setOnClickListener {
                 takePhotoActivity();

@@ -103,10 +103,10 @@ class TakePhotoActivity : AppCompatActivity() {
 
             }
                 .addOnFailureListener {
-                    Toast.makeText(this, "No text to detect", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "No text to detect", Toast.LENGTH_SHORT).show()
                 }
         } else {
-            Toast.makeText(this, "First take a photo", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "First take a photo", Toast.LENGTH_SHORT).show()
         }
     }
 

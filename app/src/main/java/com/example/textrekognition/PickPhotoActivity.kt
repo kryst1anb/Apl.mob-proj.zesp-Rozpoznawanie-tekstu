@@ -102,7 +102,7 @@ class PickPhotoActivity: AppCompatActivity() {
             displayTextFromImage(firebaseVisionText)
         }
             .addOnFailureListener {
-                Toast.makeText(this, "No text to detect", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "No text to detect", Toast.LENGTH_SHORT).show()
             }
 
     }
