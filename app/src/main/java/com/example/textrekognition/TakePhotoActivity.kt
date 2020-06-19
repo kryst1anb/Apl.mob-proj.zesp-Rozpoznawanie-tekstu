@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.text.FirebaseVisionText
+import kotlinx.android.synthetic.main.activity_take_photo.*
 
 class TakePhotoActivity : AppCompatActivity() {
     lateinit var captureImageBtn: Button
@@ -92,20 +93,16 @@ class TakePhotoActivity : AppCompatActivity() {
     }
 
     private fun detectTextFromImage() {
-
+        text_display.text = ""
         val image = FirebaseVisionImage.fromBitmap(imageBitmap)
         val detector = FirebaseVision.getInstance().onDeviceTextRecognizer
         val result = detector.processImage(image)
         result.addOnSuccessListener { firebaseVisionText ->
-            // Task completed successfully
-            // ...
             displayTextFromImage(firebaseVisionText)
-            Toast.makeText(this, "okokokokoko", Toast.LENGTH_LONG)
+
         }
-            .addOnFailureListener { e ->
-                // Task failed with an exception
-                // ...
-                Toast.makeText(this, "smutelelelelelel", Toast.LENGTH_LONG)
+            .addOnFailureListener {
+                Toast.makeText(this, "No text to detect", Toast.LENGTH_LONG).show()
             }
     }
 
