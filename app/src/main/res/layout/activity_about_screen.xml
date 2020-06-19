@@ -4,66 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutScreen">
+    tools:context=".AboutScreen"
+    android:background="@drawable/about_bcg">
+
+    <include
+        layout="@layout/toolbar"
+        />
 
     <ImageView
         android:id="@+id/imageViewGlasses"
         android:layout_width="241dp"
         android:layout_height="153dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="152dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/glasses" />
-
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="TextRekognition"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewGlasses" />
-
-    <TextView
-        android:id="@+id/textAboutApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="About App:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textDescribe"
-        android:layout_width="202dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="33dp"
         android:text="TextRekognition application can read the text from the photo."
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textContributors"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAboutApp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewGlasses" />
 
     <TextView
         android:id="@+id/textContributors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Contributors:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="18sp"
+        android:layout_marginTop="68dp"
+        android:text="Contributors"
+        android:textColor="@color/common_google_signin_btn_text_dark"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDescribe" />
 
@@ -71,9 +55,10 @@
         android:id="@+id/textMartaLewandowska"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:text="Marta Lewandowska"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/common_google_signin_btn_text_dark"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textContributors" />
@@ -82,37 +67,36 @@
         android:id="@+id/textKrystianBarczak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="Krystian Barczak"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/common_google_signin_btn_text_dark"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMartaLewandowska" />
+        app:layout_constraintTop_toBottomOf="@+id/textKrzysztofDragon" />
 
     <TextView
         android:id="@+id/textKrzysztofDragon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="Krzysztof Dragon"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/common_google_signin_btn_text_dark"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textKrystianBarczak" />
+        app:layout_constraintTop_toBottomOf="@+id/textMartaLewandowska" />
 
     <TextView
         android:id="@+id/textSzymonBabula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="Szymon Babula"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/common_google_signin_btn_text_dark"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textKrzysztofDragon" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/textKrystianBarczak" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
