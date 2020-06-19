@@ -93,6 +93,7 @@ class PickPhotoActivity: AppCompatActivity() {
         detectTextFromImage();
     }
     private fun detectTextFromImage() {
+        text_display.text = ""
         val image = FirebaseVisionImage.fromBitmap(imageBitmap)
         val detector = FirebaseVision.getInstance().onDeviceTextRecognizer
         val result = detector.processImage(image)
