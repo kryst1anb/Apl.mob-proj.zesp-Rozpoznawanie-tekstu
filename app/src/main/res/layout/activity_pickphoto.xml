@@ -11,9 +11,14 @@
 
     <!--Button to pick image-->
 
+    <include
+        layout="@layout/toolbar"
+        />
+
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
+        android:layout_marginTop="56dp"
         android:layout_height="350dp"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"

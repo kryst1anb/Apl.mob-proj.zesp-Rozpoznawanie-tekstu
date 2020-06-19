@@ -9,8 +9,11 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build.*
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.text.FirebaseVisionText
@@ -29,6 +32,10 @@ class PickPhotoActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pickphoto)
+
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.myToolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Pick photo";
 
         //BUTTON CLICK
         img_pick_btn.setOnClickListener {
@@ -114,4 +121,33 @@ class PickPhotoActivity: AppCompatActivity() {
             text_display.append(blockText + "\n")
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.take_photo -> takePhotoActivity();
+            R.id.choose_photo -> pickPhotoActivity();
+            R.id.about -> aboutActivity();
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun takePhotoActivity(){
+        val intent = Intent(this,TakePhotoActivity::class.java)
+        ContextCompat.startActivity(this, intent, null)
+    }
+
+    private fun pickPhotoActivity(){
+        Toast.makeText(this, "You are in this option!", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun aboutActivity(){
+        val intent = Intent(this,AboutScreen::class.java)
+        ContextCompat.startActivity(this, intent, null)
+    }
+
 }

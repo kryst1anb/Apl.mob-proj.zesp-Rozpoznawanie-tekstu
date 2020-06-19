@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/pickphoto"
-        android:title="Photo" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <item android:id="@+id/about"
-        android:title="About" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <item
+        android:id="@+id/take_photo"
+        android:icon="@drawable/ic_baseline_add_a_photo_24"
+        android:title="Logout"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/choose_photo"
+        android:icon="@drawable/ic_baseline_add_photo_alternate_24"
+        android:title="Add"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/ic_baseline_help_outline_24"
+        android:title="Already seen"
+        app:showAsAction="ifRoom">
+    </item>
+
 </menu>
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <item android:id="@+id/pickphoto"-->
+<!--        android:title="Photo" />-->
+
+<!--    <item android:id="@+id/about"-->
+<!--        android:title="About" />-->
+
+<!--    -->
+<!--</menu>-->
